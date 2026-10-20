@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dexture Collection – Daily Viral Videos</title>
+<meta name="description" content="Roz ke sabse viral videos. Chhota sa UPI payment karo aur turant dekho.">
+
+<!-- ========== FONTS & ICONS ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ========== TAILWIND ========== -->
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+  /* COLORS: yahan se poori website ke colors badal sakte ho */
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        ink:   '#14102B',   /* main dark background */
+        ink2:  '#1E1840',   /* cards / sections */
+        violet:'#7C3AED',   /* primary */
+        pink:  '#F43F8E',   /* accent / buttons */
+        gold:  '#FFB020',   /* price highlight */
+        mist:  '#F4F2FF'    /* light text */
+      },
+      fontFamily: { head: ['"Bricolage Grotesque"','sans-serif'], body: ['"DM Sans"','sans-serif'] }
+    }}
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; }
+  .btn-main { background: linear-gradient(135deg,#F43F8E,#7C3AED); }
+  .btn-main:hover { filter: brightness(1.1); }
+  .blur-lock { filter: blur(14px) saturate(1.2); transform: scale(1.15); }
+  :focus-visible { outline: 3px solid #FFB020; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; scroll-behavior: auto !important; } }
+  @keyframes pulseRing { 0%{box-shadow:0 0 0 0 rgba(244,63,142,.6)} 100%{box-shadow:0 0 0 18px rgba(244,63,142,0)} }
+  .pulse { animation: pulseRing 1.8s infinite; }
+</style>
+</head>
+
+<body class="bg-ink text-mist antialiased">
+
+<!-- ========== 1. NAVBAR ========== -->
+<header class="sticky top-0 z-40 bg-ink/90 backdrop-blur border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="#home" class="flex items-center gap-2 font-head font-extrabold text-xl">
+      <span class="w-9 h-9 rounded-lg btn-main grid place-items-center"><i class="fa-solid fa-play text-sm"></i></span>
+      <span data-brand>Dexture Collection</span>
+    </a>
+    <nav class="hidden md:flex gap-8 text-sm text-mist/80">
+      <a href="#videos" class="hover:text-white">Aaj ke Videos</a>
+      <a href="#how" class="hover:text-white">Kaise Kaam Karta Hai</a>
+      <a href="#about" class="hover:text-white">About</a>
+      <a href="#faq" class="hover:text-white">FAQ</a>
+      <a href="#contact" class="hover:text-white">Contact</a>
+    </nav>
+    <a href="#videos" class="hidden md:inline-block btn-main px-5 py-2 rounded-full text-sm font-bold">Videos Dekho</a>
+    <button id="menuBtn" class="md:hidden text-2xl" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-4 py-3 space-y-3 text-mist/90">
+    <a href="#videos" class="block">Aaj ke Videos</a>
+    <a href="#how" class="block">Kaise Kaam Karta Hai</a>
+    <a href="#about" class="block">About</a>
+    <a href="#faq" class="block">FAQ</a>
+    <a href="#contact" class="block">Contact</a>
+  </div>
+</header>
+
+<!-- ========== 2. HERO ========== -->
+<section id="home" class="relative overflow-hidden">
+  <div class="absolute -top-32 -left-32 w-96 h-96 bg-violet/40 rounded-full blur-3xl"></div>
+  <div class="absolute top-40 -right-24 w-80 h-80 bg-pink/30 rounded-full blur-3xl"></div>
+  <div class="relative max-w-6xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="inline-flex items-center gap-2 text-sm bg-white/10 rounded-full px-4 py-1 mb-5">
+        <span class="w-2 h-2 rounded-full bg-pink"></span> Roz naye viral videos
+      </p>
+      <h1 class="font-head font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.05]">
+        Jo video sab dhoondh rahe hain, wo yahan pehle milega.
+      </h1>
+      <p class="mt-5 text-lg text-mist/75 max-w-lg">
+        Har din ke sabse zyada viral videos ek jagah. UPI se chhota sa payment karo aur video turant unlock ho jaata hai.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#videos" class="btn-main px-7 py-3 rounded-full font-bold pulse">Aaj ke Videos Dekho</a>
+        <a href="#how" class="px-7 py-3 rounded-full font-bold border border-white/25 hover:bg-white/10">Kaise Kaam Karta Hai</a>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-6 text-sm text-mist/70">
+        <span><i class="fa-solid fa-bolt text-gold mr-2"></i>Turant unlock</span>
+        <span><i class="fa-solid fa-mobile-screen text-gold mr-2"></i>GPay / PhonePe / Paytm</span>
+        <span><i class="fa-solid fa-calendar-day text-gold mr-2"></i>Roz naya content</span>
+      </div>
+    </div>
+
+    <!-- Hero visual: locked video player mockup -->
+    <div class="relative">
+      <div class="rounded-3xl bg-ink2 border border-white/10 p-3 shadow-2xl rotate-2">
+        <div class="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-pink via-violet to-ink">
+          <div class="absolute inset-0 blur-lock bg-gradient-to-tr from-gold/60 via-pink/50 to-violet/60"></div>
+          <div class="absolute inset-0 grid place-items-center">
+            <div class="text-center">
+              <div class="w-16 h-16 mx-auto rounded-full bg-white/20 backdrop-blur grid place-items-center text-2xl"><i class="fa-solid fa-lock"></i></div>
+              <p class="mt-3 font-head font-bold text-xl">Unlock karo sirf <span class="text-gold" data-price-text>₹10</span> mein</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between px-2 pt-3 text-sm text-mist/70">
+          <span><i class="fa-solid fa-fire text-pink mr-1"></i> Aaj ka #1 viral</span>
+          <span><i class="fa-solid fa-eye mr-1"></i> 12.4K views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3. TODAY'S VIDEOS (cards JS se banenge: neeche CONFIG dekho) ========== -->
+<section id="videos" class="py-16 md:py-20 bg-ink2/50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-xl">
+      <h2 class="font-head font-extrabold text-3xl md:text-4xl">Aaj ke viral videos</h2>
+      <p class="mt-3 text-mist/70">Jo video dekhna hai uspe tap karo, payment karo, aur dekho. Ek baar unlock hua to usi device par dobara payment nahi.</p>
+    </div>
+    <div id="videoGrid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ========== 4. HOW IT WORKS ========== -->
+<section id="how" class="py-16 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-head font-extrabold text-3xl md:text-4xl">Sirf 3 step mein video dekho</h2>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="rounded-2xl bg-ink2 p-6 border border-white/10">
+        <i class="fa-solid fa-hand-pointer text-3xl text-pink"></i>
+        <h3 class="mt-4 font-head font-bold text-xl">1. Video chuno</h3>
+        <p class="mt-2 text-mist/70">Aaj ki list se wo video select karo jo dekhna hai.</p>
+      </div>
+      <div class="rounded-2xl bg-ink2 p-6 border border-white/10">
+        <i class="fa-solid fa-indian-rupee-sign text-3xl text-gold"></i>
+        <h3 class="mt-4 font-head font-bold text-xl">2. UPI se pay karo</h3>
+        <p class="mt-2 text-mist/70">Apne UPI app se payment karo ya QR scan karo.</p>
+      </div>
+      <div class="rounded-2xl bg-ink2 p-6 border border-white/10">
+        <i class="fa-solid fa-lock-open text-3xl text-violet"></i>
+        <h3 class="mt-4 font-head font-bold text-xl">3. Transaction ID daalo</h3>
+        <p class="mt-2 text-mist/70">12 digit UTR number daalte hi video khul jaata hai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 5. ABOUT ========== -->
+<section id="about" class="py-16 md:py-20 bg-ink2/50">
+  <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="font-head font-extrabold text-3xl md:text-4xl">Dexture Collection kya hai?</h2>
+      <p class="mt-4 text-mist/75">Hum internet par jo videos sabse zyada chal rahe hain unhe roz ek jagah laate hain. Aapko alag-alag app aur site par bhatakna nahi padta. Chhota sa payment, aur seedha video.</p>
+      <p class="mt-3 text-mist/75">Naya collection har din update hota hai, isliye wapas aate raho.</p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="rounded-2xl bg-ink p-5 border border-white/10"><p class="font-head font-extrabold text-3xl text-gold">Daily</p><p class="text-sm text-mist/70 mt-1">naye videos</p></div>
+      <div class="rounded-2xl bg-ink p-5 border border-white/10"><p class="font-head font-extrabold text-3xl text-pink">UPI</p><p class="text-sm text-mist/70 mt-1">instant payment</p></div>
+      <div class="rounded-2xl bg-ink p-5 border border-white/10"><p class="font-head font-extrabold text-3xl text-violet">Mobile</p><p class="text-sm text-mist/70 mt-1">par smooth chalta hai</p></div>
+      <div class="rounded-2xl bg-ink p-5 border border-white/10"><p class="font-head font-extrabold text-3xl text-gold">Kam</p><p class="text-sm text-mist/70 mt-1">daam, zyada maza</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 6. FAQ ========== -->
+<section id="faq" class="py-16 md:py-20">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="font-head font-extrabold text-3xl md:text-4xl">Aam sawaal</h2>
+    <div class="mt-8 space-y-3">
+      <details class="rounded-xl bg-ink2 border border-white/10 p-4"><summary class="font-bold cursor-pointer">Payment kaise karna hai?</summary><p class="mt-2 text-mist/70">Video par "Unlock" dabao. UPI app khulega ya QR dikhega. Payment ke baad UTR number daalo.</p></details>
+      <details class="rounded-xl bg-ink2 border border-white/10 p-4"><summary class="font-bold cursor-pointer">UTR / Transaction ID kahan milega?</summary><p class="mt-2 text-mist/70">Payment ke baad UPI app ki history mein 12 digit ka "UPI Ref No." ya "UTR" dikhta hai.</p></details>
+      <details class="rounded-xl bg-ink2 border border-white/10 p-4"><summary class="font-bold cursor-pointer">Payment ho gaya par video nahi khula?</summary><p class="mt-2 text-mist/70">Neeche Contact section se humein payment screenshot bhejo. Hum jaldi check karenge.</p></details>
+      <details class="rounded-xl bg-ink2 border border-white/10 p-4"><summary class="font-bold cursor-pointer">Kya refund milega?</summary><p class="mt-2 text-mist/70">Digital content hone ki wajah se refund nahi hota. Technical problem ho to humse sampark karo.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 7. CONTACT ========== -->
+<section id="contact" class="py-16 md:py-20 bg-ink2/50">
+  <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+    <div>
+      <h2 class="font-head font-extrabold text-3xl md:text-4xl">Humse baat karo</h2>
+      <p class="mt-3 text-mist/70">Koi problem ho ya sawaal, message bhejo. Form bhejne par WhatsApp khulega.</p>
+      <ul class="mt-6 space-y-3 text-mist/80">
+        <li><i class="fa-brands fa-whatsapp text-pink w-6"></i> <span data-wa-text></span></li>
+        <li><i class="fa-regular fa-envelope text-pink w-6"></i> <span data-email-text></span></li>
+        <li><i class="fa-solid fa-indian-rupee-sign text-pink w-6"></i> UPI ID: <span data-upi-text></span></li>
+      </ul>
+    </div>
+    <form id="contactForm" class="rounded-2xl bg-ink p-6 border border-white/10 space-y-4">
+      <div><label class="text-sm" for="cName">Aapka naam</label>
+        <input id="cName" required class="mt-1 w-full rounded-lg bg-ink2 border border-white/15 px-4 py-3 focus:border-pink outline-none"></div>
+      <div><label class="text-sm" for="cMsg">Message</label>
+        <textarea id="cMsg" rows="4" required class="mt-1 w-full rounded-lg bg-ink2 border border-white/15 px-4 py-3 focus:border-pink outline-none"></textarea></div>
+      <button class="btn-main w-full py-3 rounded-full font-bold">WhatsApp par bhejo</button>
+    </form>
+  </div>
+</section>
+
+<!-- ========== 8. FOOTER ========== -->
+<footer class="border-t border-white/10 py-8">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-mist/60">
+    <p>© <span id="year"></span> <span data-brand></span>. Sabhi adhikaar surakshit.</p>
+    <p>Sirf 18+ ke liye. Payment ke baad refund nahi.</p>
+  </div>
+</footer>
+
+<!-- ========== PAYMENT MODAL ========== -->
+<div id="payModal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm p-4 overflow-y-auto" role="dialog" aria-modal="true">
+  <div class="max-w-md mx-auto mt-8 rounded-3xl bg-ink2 border border-white/15 p-6 relative">
+    <button id="closeModal" class="absolute top-4 right-4 text-xl text-mist/70 hover:text-white" aria-label="Band karo"><i class="fa-solid fa-xmark"></i></button>
+    <h3 class="font-head font-extrabold text-2xl">Video unlock karo</h3>
+    <p id="mTitle" class="mt-1 text-mist/70"></p>
+    <p class="mt-4 text-4xl font-head font-extrabold text-gold" id="mPrice"></p>
+
+    <a id="upiLink" class="mt-5 block text-center btn-main py-3 rounded-full font-bold"><i class="fa-solid fa-mobile-screen mr-2"></i>UPI App se pay karo</a>
+    <p class="text-center text-xs text-mist/50 my-3">ya desktop par QR scan karo</p>
+    <img id="qrImg" alt="UPI QR code" class="mx-auto w-44 h-44 rounded-xl bg-white p-2">
+    <p class="text-center mt-3 text-sm">UPI ID: <b id="mUpi" class="text-gold"></b>
+      <button id="copyUpi" class="ml-2 text-pink underline text-xs">Copy</button></p>
+
+    <div class="mt-6 border-t border-white/10 pt-5">
+      <label for="utr" class="text-sm">Payment ke baad 12 digit UTR number daalo</label>
+      <input id="utr" inputmode="numeric" maxlength="12" placeholder="123456789012" class="mt-1 w-full rounded-lg bg-ink border border-white/15 px-4 py-3 focus:border-pink outline-none">
+      <p id="utrErr" class="hidden text-sm text-pink mt-1">UTR 12 digit ka number hona chahiye.</p>
+      <button id="unlockBtn" class="mt-3 w-full py-3 rounded-full font-bold bg-white text-ink hover:bg-gold">Unlock aur Dekho</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== VIDEO PLAYER MODAL ========== -->
+<div id="playModal" class="hidden fixed inset-0 z-50 bg-black/90 p-4 grid place-items-center">
+  <div class="w-full max-w-3xl">
+    <div class="flex justify-between items-center mb-3">
+      <p id="pTitle" class="font-bold"></p>
+      <button id="closePlay" class="text-2xl" aria-label="Band karo"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div id="playerBox" class="aspect-video bg-ink2 rounded-xl overflow-hidden grid place-items-center text-mist/60"></div>
+  </div>
+</div>
+
+<script>
+/* =====================================================
+   CONFIG – SIRF YAHAN SE SAB KUCH BADLO
+   ===================================================== */
+const CONFIG = {
+  brand: 'Dexture Collection',
+  upiId: 'fayeem@fam',
+  whatsapp: '91XXXXXXXXXX',          // <-- apna WhatsApp number daalo (91 ke saath, bina + ke)
+  email: 'your@email.com',           // <-- apna email daalo
+  defaultPrice: 10,                  // <-- har video ki default price (₹)
+
+  /* VIDEOS: har din yahan naye video add karo.
+     src    = video ki direct link (.mp4) ya YouTube embed link
+     price  = us video ki alag price (na likho to defaultPrice lagega)
+     from/to = card ke thumbnail ke gradient colors            */
+  videos: [
+    { id: 'v1', title: 'Aaj ka Video 1', tag: 'Trending', duration: '0:45', src: '', price: 10, from: '#F43F8E', to: '#7C3AED' },
+    { id: 'v2', title: 'Aaj ka Video 2', tag: 'Viral',    duration: '1:10', src: '', price: 10, from: '#FFB020', to: '#F43F8E' },
+    { id: 'v3', title: 'Aaj ka Video 3', tag: 'New',      duration: '0:30', src: '', price: 15, from: '#7C3AED', to: '#14102B' },
+    { id: 'v4', title: 'Aaj ka Video 4', tag: 'Trending', duration: '2:05', src: '', price: 20, from: '#06B6D4', to: '#7C3AED' },
+    { id: 'v5', title: 'Aaj ka Video 5', tag: 'Viral',    duration: '0:58', src: '', price: 10, from: '#F43F8E', to: '#FFB020' },
+    { id: 'v6', title: 'Aaj ka Video 6', tag: 'New',      duration: '1:30', src: '', price: 10, from: '#10B981', to: '#7C3AED' }
+  ]
+};
+
+/* ---------- Helpers ---------- */
+const $ = id => document.getElementById(id);
+const priceOf = v => v.price ?? CONFIG.defaultPrice;
+let unlocked = [];
+try { unlocked = JSON.parse(localStorage.getItem('dx_unlocked') || '[]'); } catch (e) {}
+const saveUnlocked = () => { try { localStorage.setItem('dx_unlocked', JSON.stringify(unlocked)); } catch (e) {} };
+
+/* ---------- Fill brand / contact text ---------- */
+document.querySelectorAll('[data-brand]').forEach(e => e.textContent = CONFIG.brand);
+document.querySelectorAll('[data-price-text]').forEach(e => e.textContent = '₹' + CONFIG.defaultPrice);
+document.querySelectorAll('[data-upi-text]').forEach(e => e.textContent = CONFIG.upiId);
+document.querySelectorAll('[data-email-text]').forEach(e => e.textContent = CONFIG.email);
+document.querySelectorAll('[data-wa-text]').forEach(e => e.textContent = '+' + CONFIG.whatsapp);
+$('year').textContent = new Date().getFullYear();
+
+/* ---------- Mobile menu ---------- */
+$('menuBtn').onclick = () => $('mobileMenu').classList.toggle('hidden');
+$('mobileMenu').querySelectorAll('a').forEach(a => a.onclick = () => $('mobileMenu').classList.add('hidden'));
+
+/* ---------- Video cards ---------- */
+function renderVideos() {
+  $('videoGrid').innerHTML = CONFIG.videos.map(v => {
+    const open = unlocked.includes(v.id);
+    return `
+    <article class="rounded-2xl bg-ink border border-white/10 overflow-hidden">
+      <div class="relative aspect-video overflow-hidden" style="background:linear-gradient(135deg,${v.from},${v.to})">
+        <div class="absolute inset-0 ${open ? '' : 'blur-lock'}" style="background:linear-gradient(135deg,${v.from},${v.to})"></div>
+        <span class="absolute top-3 left-3 text-xs font-bold bg-black/50 rounded-full px-3 py-1">${v.tag}</span>
+        <span class="absolute bottom-3 right-3 text-xs bg-black/60 rounded px-2 py-1">${v.duration}</span>
+        <div class="absolute inset-0 grid place-items-center">
+          <div class="w-14 h-14 rounded-full bg-white/25 backdrop-blur grid place-items-center text-xl">
+            <i class="fa-solid ${open ? 'fa-play' : 'fa-lock'}"></i>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 flex items-center justify-between gap-3">
+        <div><h3 class="font-head font-bold">${v.title}</h3>
+          <p class="text-gold font-bold">${open ? 'Unlocked' : '₹' + priceOf(v)}</p></div>
+        <button data-id="${v.id}" class="vbtn btn-main px-5 py-2 rounded-full text-sm font-bold">${open ? 'Dekho' : 'Unlock'}</button>
+      </div>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('.vbtn').forEach(b => b.onclick = () => {
+    const v = CONFIG.videos.find(x => x.id === b.dataset.id);
+    unlocked.includes(v.id) ? playVideo(v) : openPay(v);
+  });
+}
+
+/* ---------- Payment modal ---------- */
+let current = null;
+function openPay(v) {
+  current = v;
+  const amt = priceOf(v);
+  $('mTitle').textContent = v.title;
+  $('mPrice').textContent = '₹' + amt;
+  $('mUpi').textContent = CONFIG.upiId;
+  const params = `pa=${encodeURIComponent(CONFIG.upiId)}&pn=${encodeURIComponent(CONFIG.brand)}&am=${amt}&cu=INR&tn=${encodeURIComponent(v.title)}`;
+  $('upiLink').href = 'upi://pay?' + params;
+  /* QR code ek free online service se banta hai */
+  $('qrImg').src = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent('upi://pay?' + params);
+  $('utr').value = ''; $('utrErr').classList.add('hidden');
+  $('payModal').classList.remove('hidden');
+}
+$('closeModal').onclick = () => $('payModal').classList.add('hidden');
+$('copyUpi').onclick = () => { try { navigator.clipboard.writeText(CONFIG.upiId); $('copyUpi').textContent = 'Copied'; } catch (e) {} };
+
+/* UTR check karke unlock karta hai.
+   NOTE: ye sirf front-end check hai (12 digit number). Asli payment verification ke liye
+   backend ya payment gateway (Razorpay / Cashfree) chahiye. */
+$('unlockBtn').onclick = () => {
+  if (!/^\d{12}$/.test($('utr').value.trim())) { $('utrErr').classList.remove('hidden'); return; }
+  unlocked.push(current.id); saveUnlocked();
+  $('payModal').classList.add('hidden');
+  renderVideos(); playVideo(current);
+};
+
+/* ---------- Video player ---------- */
+function playVideo(v) {
+  $('pTitle').textContent = v.title;
+  const isYT = /youtube\.com|youtu\.be/.test(v.src);
+  $('playerBox').innerHTML = !v.src
+    ? '<p class="p-6 text-center">Is video ka link CONFIG mein "src" mein daalo.</p>'
+    : isYT ? `<iframe class="w-full h-full" src="${v.src}" allowfullscreen></iframe>`
+           : `<video class="w-full h-full" src="${v.src}" controls playsinline controlsList="nodownload"></video>`;
+  $('playModal').classList.remove('hidden');
+}
+$('closePlay').onclick = () => { $('playerBox').innerHTML = ''; $('playModal').classList.add('hidden'); };
+
+/* ---------- Contact form -> WhatsApp ---------- */
+$('contactForm').onsubmit = e => {
+  e.preventDefault();
+  const text = `Naam: ${$('cName').value}\nMessage: ${$('cMsg').value}`;
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, '_blank');
+};
+
+renderVideos();
+</script>
+</body>
+</html>
